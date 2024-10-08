@@ -14,7 +14,9 @@ export function App() {
   const [aiCreativityTemperature, setAiCreativityTemperature] = useState(0.5)
   const [videoId, setVideoId] = useState<string | null>(null)
 
-  const {input, setInput, handleInputChange, handleSubmit, completion, isLoading} = useCompletion({
+  // console.log(videoId, aiCreativityTemperature)
+  
+  const { input, setInput, handleInputChange, handleSubmit, completion, isLoading } = useCompletion({
     api: 'http://localhost:3333/ai/generate',
     body: {
       videoId,
@@ -22,8 +24,7 @@ export function App() {
     },
     headers: {
       'Content-Type': 'application/json'
-    }    
-
+    }
   })
 
   return (
